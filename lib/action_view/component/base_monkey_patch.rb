@@ -6,7 +6,7 @@
 # We'll need to upstream an updated version of this eventually.
 module ActionView
   module Component
-    module RenderMonkeyPatch # :nodoc:
+    module BaseMonkeyPatch # :nodoc:
       def render(options = {}, args = {}, &block)
         if options.respond_to?(:render_in)
           ActiveSupport::Deprecation.warn(

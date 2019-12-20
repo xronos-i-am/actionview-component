@@ -15,7 +15,9 @@ module ActionView
     autoload :Previewable
     autoload :TestHelpers
     autoload :TestCase
-    autoload :RenderMonkeyPatch
+    autoload :BaseMonkeyPatch
+    autoload :RendererMonkeyPatch
+    autoload :RenderingMonkeyPatch
   end
 end
 

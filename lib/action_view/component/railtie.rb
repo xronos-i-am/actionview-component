@@ -41,7 +41,9 @@ module ActionView
 
       initializer "action_view_component.monkey_patch_render" do
         ActiveSupport.on_load(:action_view) do
-          ActionView::Base.prepend ActionView::Component::RenderMonkeyPatch
+          ActionView::Base.prepend ActionView::Component::BaseMonkeyPatch
+          ActionView::Renderer.prepend ActionView::Component::RendererMonkeyPatch
+          ActionView::Rendering.prepend ActionView::Component::RenderingMonkeyPatch
         end
       end
 

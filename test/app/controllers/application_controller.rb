@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def variants
     request.variant = params[:variant].to_sym if params[:variant]
   end
+
+  def controller_inline
+    render(ErbComponent, message: "bar") { "Foo" }
+  end
 end
