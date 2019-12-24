@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def controller_inline
-    render(ErbComponent, message: "bar") { "Foo" }
+    render(object: ErbComponent, message: "bar") { "Foo" }
   end
 end

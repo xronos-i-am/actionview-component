@@ -43,7 +43,7 @@ module ActionView
         ActiveSupport.on_load(:action_view) do
           ActionView::Base.prepend ActionView::Component::BaseMonkeyPatch
           ActionView::Renderer.prepend ActionView::Component::RendererMonkeyPatch
-          ActionView::Rendering.prepend ActionView::Component::RenderingMonkeyPatch
+          ActionController::Base.prepend ActionView::Component::RenderingMonkeyPatch
         end
       end
 

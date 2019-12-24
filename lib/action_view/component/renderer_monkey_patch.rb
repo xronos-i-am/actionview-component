@@ -10,7 +10,7 @@ module ActionView
       def render_to_object(context, options)
         if options.key?(:object)
           object = options[:object]
-          AbstractRenderer::RenderedTemplate.new(object.render_in(context), object)
+          AbstractRenderer::RenderedTemplate.new(object.new(options).render_in(context), object)
         else
           super
         end
