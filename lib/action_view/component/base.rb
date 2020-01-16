@@ -49,6 +49,11 @@ module ActionView
         @view_flow ||= view_context.view_flow
         @virtual_path ||= virtual_path
         @variant = @lookup_context.variants.first
+
+        render_template(&block)
+      end
+
+      def render_template(&block)
         old_current_template = @current_template
         @current_template = self
 
